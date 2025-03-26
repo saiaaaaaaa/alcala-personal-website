@@ -9,7 +9,7 @@
     <body>
         <header>
             <h1>Brian Matthew Alcala</h1>
-            <img class="profile-pic" src="brian.jpg" alt="My Picture">
+            <img class="profile-pic" data-lazy="brian.jpg" alt="My Picture">
         </header>
     
         <section id="about">
@@ -31,5 +31,139 @@
             <h2>Contact Me</h2>
             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M591-482 276-797q-11-11-11-27.5t11-28.5q12-12 28.5-12t28.5 12l329 329q9 9 13 20t4 22q0 11-4 22t-13 20L332-110q-12 12-28 11.5T276-111q-11-12-11.5-28t11.5-28l315-315Z"/></svg>
         </a>
+
+        <section>
+            <h2>Battle of the Bands</h2>
+            <div class="imgcontainer">
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/1.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/2.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/3.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/4.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/5.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/6.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/7.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/8.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/9.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/10.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/11.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/12.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/13.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/14.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/15.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/16.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/BattleOfTheBands/17.jpg">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tour 2023</h2>
+            <div class="imgcontainer">
+                <div>
+                    <img data-lazy="images/Tour2023/1.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/2.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/3.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/4.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/5.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/6.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/7.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/8.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/9.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/10.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/11.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/12.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/13.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/14.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/15.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/16.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/17.jpg">
+                </div>
+                <div>
+                    <img data-lazy="images/Tour2023/18.jpg">
+                </div>
+            </div>
+        </section>
     </body>
+    <script>
+        const targets = document.querySelectorAll("img");
+        const lazyload = target => {
+            const io = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting){
+                        const img = entry.target;
+                        const src = img.getAttribute("data-lazy");
+                        img.setAttribute("src", src);
+                        observer.disconnect();
+                    }
+                });
+            });
+            io.observe(target);
+        };
+        targets.forEach(lazyload);
+    </script>
 </html>
